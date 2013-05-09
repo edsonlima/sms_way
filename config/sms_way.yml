@@ -1,0 +1,16 @@
+common: &common
+  kannel:
+    base_uri: http://localhost:13013/cgi-bin
+    username: kannel
+    password: senha
+    extra_options:
+      charset: UTF-8
+      coding: 2
+      dlr-mask: 31
+      dlr-url: http://localhost:3000/clickatell_calback?status=%d&modem=%i&data=%t&hash_id=hiasafsio4343243
+
+development:
+  <<: *common
+
+test:
+  <<: *common

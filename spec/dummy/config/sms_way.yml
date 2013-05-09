@@ -1,0 +1,28 @@
+common: &common
+  Kannel:
+    auth_options:
+      username: kannel
+      password: password
+    base_uri: http://localhost:13013/cgi-bin
+    extra_options:
+      charset: UTF-8
+      coding: 2
+      dlr-mask: 31
+      dlr-url: http://localhost:3000/clickatell_calback?status=%d&modem=%i&data=%t&hash_id=hiasafsio4343243
+  UseSMS:
+    auth_options:
+      username: test
+      password: pwd
+    base_uri: http://usesms.leosoft.com.br/api
+
+development:
+  active_client: Kannel
+  <<: *common
+
+test:
+  <<: *common
+  active_client: not_exists
+
+production:
+  <<: *common
+  active_client: UseSMS
