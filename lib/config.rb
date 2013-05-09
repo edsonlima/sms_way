@@ -18,6 +18,17 @@ module SMSWay
 
   class Config < Settingslogic
 
+    def self.new_source(value) #:no-doc:
+      @source = value
+      reload!
+    end
+
+    def self.new_namespace(value) #:no-doc:
+      @namespace = value
+      reload!
+    end
+
+
     def self.config_file
       File.join(Dir.pwd, 'config', 'sms_way.yml')
     end

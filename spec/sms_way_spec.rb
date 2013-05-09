@@ -13,6 +13,7 @@ describe SMSWay do
     end
 
     it 'should detect active_client' do
+      SMSWay::Config['active_client'] = 'Kannel'
       SMSWay.active_client.should be_instance_of(Kannel)
     end
 

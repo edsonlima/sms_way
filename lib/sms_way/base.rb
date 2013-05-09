@@ -10,8 +10,11 @@ module SMSWay
       subclass.class_eval { include SMSWay::Registry }
     end
 
+    attr_accessor :extra_options
+
     def initialize(auth_options)
       add_query_options! auth_options
+      @extra_options = SMSWay::Config[self.class.to_s]['extra_options'] if SMSWay::Config[self.class.to_s] && SMSWay::Config[self.class.to_s]['extra_options']
     end
 
     # <b>Implement this method in your client implementation.</b>

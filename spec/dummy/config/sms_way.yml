@@ -8,7 +8,7 @@ common: &common
       charset: UTF-8
       coding: 2
       dlr-mask: 31
-      dlr-url: http://localhost:3000/clickatell_calback?status=%d&modem=%i&data=%t&hash_id=hiasafsio4343243
+      dlr-url: http://localhost:3000/sms_calback?status=%d&modem=%i&date=%t&hash_id=hiasafsio4343243
   UseSMS:
     auth_options:
       username: test
