@@ -4,7 +4,7 @@ common: &common
       username: kannel
       password: password
     base_uri: http://localhost:13013/cgi-bin
-    extra_options:
+    base_options:
       charset: UTF-8
       coding: 2
       dlr-mask: 31

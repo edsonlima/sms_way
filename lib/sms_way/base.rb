@@ -6,15 +6,15 @@ module SMSWay
   class Base
     include APISmith::Client
 
-    def self.inherited(subclass)
-      subclass.class_eval { include SMSWay::Registry }
+  def self.inherited(subclass)
+    subclass.class_eval {
+      include APISmith::Client
+      include SMSWay::Registry
+      }
     end
-
-    attr_accessor :extra_options
 
     def initialize(auth_options)
       add_query_options! auth_options
-      @extra_options = SMSWay::Config[self.class.to_s]['extra_options'] if SMSWay::Config[self.class.to_s] && SMSWay::Config[self.class.to_s]['extra_options']
     end
 
     # <b>Implement this method in your client implementation.</b>
@@ -29,6 +29,12 @@ module SMSWay
     # * +api_options+ An hash with any optional or specific API parameters
     def send_sms(to, text, api_options = {})
       raise NotImplementedError.new('Implement send_sms(to, text, api_options = {}) in your client.')
+    end
+
+    private
+
+    def base_query_options
+      SMSWay::Config.base_options_of(self.class.to_s)
     end
   end
 end

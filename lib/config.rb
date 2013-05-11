@@ -48,5 +48,9 @@ module SMSWay
     def self.auth_options_of(client = self.active_client)
       self[client]['auth_options']
     end
+
+    def self.base_options_of(client = self.active_client)
+      self[client]['base_options'] || {}
+    end
   end
 end
