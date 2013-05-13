@@ -6,7 +6,7 @@ begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
   $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
+  $stderr.puts 'Run `bundle install` to install missing gems'
   exit e.status_code
 end
 require 'rake'
@@ -14,13 +14,13 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "sms_way"
-  gem.homepage = "http://github.com/edsonlima/sms_way"
-  gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "edsonalima@gmail.com"
-  gem.authors = ["Edson de Lima"]
+  gem.name = 'sms_way'
+  gem.homepage = 'http://github.com/edsonlima/sms_way'
+  gem.license = 'MIT'
+  gem.summary = 'Easy way to send SMS messages through any gateway.'
+  gem.description = 'sms_way helps you to send SMS, WAP or MMS messages trough of api''s of gateways as Kannel, UseSMS or others.'
+  gem.email = 'edsonalima@gmail.com'
+  gem.authors = ['Edson de Lima']
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -42,7 +42,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ''
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "sms_way #{version}"
+  rdoc.title = 'sms_way #{version}'
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
