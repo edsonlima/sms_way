@@ -30,11 +30,11 @@ module SMSWay
 
 
     def self.config_file
-      File.join(Dir.pwd, 'config', 'sms_way.yml')
+      File.join(defined?(Rails) ? Rails.root : Dir.pwd, 'config', 'sms_way.yml')
     end
 
     def self.clients_path
-      File.join(Dir.pwd, 'lib', 'sms_way')
+      File.join(defined?(Rails) ? Rails.root : Dir.pwd, 'lib', 'sms_way')
     end
 
 
