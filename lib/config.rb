@@ -18,6 +18,11 @@ module SMSWay
 
   class Config < Settingslogic
 
+    def self.load_configuration
+      source self.config_file
+      namespace self.env
+    end
+
     def self.new_source(value) #:no-doc:
       @source = value
       reload!
@@ -37,13 +42,9 @@ module SMSWay
       File.join(defined?(Rails) ? Rails.root : Dir.pwd, 'lib', 'sms_way')
     end
 
-
     def self.env
       defined?(Rails) ? Rails.env : ENV['SMSWAY_ENV']
     end
-
-    source self.config_file
-    namespace self.env
 
     def self.auth_options_of(client = self.active_client)
       self[client]['auth_options']

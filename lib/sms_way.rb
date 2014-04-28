@@ -34,6 +34,7 @@ module SMSWay
   end
 
   def self.start!
+    SMSWay::Config.load_configuration
     Dir.glob(File.join(SMSWay::Config.clients_path, '**', '*.rb')).each {|f| require_relative f}
   end
 end
