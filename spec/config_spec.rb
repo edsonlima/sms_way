@@ -40,15 +40,15 @@ describe SMSWay::Config do
       stub_const('Rails', fake_rails)
     end
 
-    it 'does return config file' do
+    it 'return config file' do
       expect(SMSWay::Config.config_file).to eq(File.join('/my_rails_app', 'config', 'sms_way.yml'))
     end
 
-    it 'does return clients path' do
+    it 'return clients path' do
       expect(SMSWay::Config.clients_path).to eq(File.join('/my_rails_app', 'lib', 'sms_way'))
     end
 
-    it 'does return correct env' do
+    it 'return correct env' do
       expect(SMSWay::Config.env).to eq('production')
     end
 
