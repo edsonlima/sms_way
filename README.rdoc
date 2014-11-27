@@ -1,6 +1,8 @@
 = sms_way
 
-Description goes here.
+*UNDER CONSTRUCTION - In some days I will add documentation here.
+*But... if you want, you can use it. I use in production for more than one year, without any known bugs.
+
 
 == Contributing to sms_way
  
