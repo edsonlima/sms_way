@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
     "lib/sms_way.rb",
     "lib/sms_way/base.rb",
     "lib/sms_way/registry.rb",
+    "sms_way.gemspec",
     "spec/base_spec.rb",
     "spec/config_spec.rb",
     "spec/dummy/config/sms_way.yml",
